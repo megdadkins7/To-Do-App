@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import Checkbox from './Checkbox';
+import Checkbox from './Checkbox'
 
 const StyledToDo = styled.div`
   .ToDoWrapper {
@@ -22,26 +22,33 @@ const StyledToDo = styled.div`
     background: 0 0;
     cursor: pointer;
     padding: 0;
-    background-color: #f1f1f1;
+    background-color: #fff;
     font-size: 21px;
     color: #4d4d4d;
     line-height: 1;
     opacity: 0.5;
+    margin-top: -5px;
+    margin-left: auto;
   }
   .ToDoButton:focus {
     outline: none !important;
   }
+  .ToDoLine {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    border-radius: 7px;
+  }
 `;
 
-function ToDo({ toDo, removeToDo }) {
-  const [value, setValue] = useState(false);
+function ToDo({ toDo, removeToDo, toggleToDo }) {
   return (
     <StyledToDo>
       <li className="ToDoWrapper">
         <Checkbox
           id={toDo.id}
-          isOn={value}
-          handleToggle={() => setValue(!value)}
+          isOn={toDo.done}
+          handleToggle={() => toggleToDo(toDo.id)}
         />
         <span className="ToDoItem">{toDo.toDo}</span>
         <button
@@ -52,8 +59,9 @@ function ToDo({ toDo, removeToDo }) {
           &times;
         </button>
       </li>
+      <hr className="ToDoLine" />
     </StyledToDo>
   );
 }
 
-export default ToDo;
+export default ToDo
