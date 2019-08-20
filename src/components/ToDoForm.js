@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 const StyledToDoForm = styled.div`
   .ToDoForm .FormControl {
-    width: 30%;
     margin-left: 50px;
   }
   .FormControl {
-    padding: 8px;
+    padding: 10px;
+    margin-bottom: -5px;
     border: solid 1px #ccc;
     width: 300px;
     -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
@@ -32,7 +32,7 @@ const StyledToDoForm = styled.div`
     color: white;
     right: -25px;
     font-size: 27px;
-    box-shadow: 3px 2px 6px #cfd0d5;
+    box-shadow: 1px 1px 4px #cfd0d5;
     outline: none !important;
     cursor: pointer;
   }

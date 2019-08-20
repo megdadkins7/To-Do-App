@@ -11,6 +11,8 @@ const GlobalStyles = createGlobalStyle`
       height: 100vh;
   }
   body {
+      display: flex;
+      justify-content: center;
       margin: 0;
       padding: 0;
       font-family: 'Red Hat Text', sans-serif;
